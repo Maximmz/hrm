@@ -24,7 +24,7 @@ export default function RootLayout({
         <SideLink href="/employees">Employee Card</SideLink>
         <SideLink href="/expenses">Expenses</SideLink>
         </Sidebar>
-        {children}</body>
+       <div className="ps-64">{children}</div></body>
     </html>
     </>
 }
