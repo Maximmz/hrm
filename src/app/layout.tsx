@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {Sidebar, SideLink} from "./_components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  
+  return <>	
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Sidebar>
+        <SideLink href="/">Home</SideLink>
+        <SideLink href="/employees">Employee Card</SideLink>
+        <SideLink href="/expenses">Expenses</SideLink>
+        </Sidebar>
+        {children}</body>
     </html>
-  );
+    </>
 }

@@ -17,8 +17,8 @@ model Employee {
   id           Int      @id @default(autoincrement())
   name         String
   email        String   @unique
-  // Add other employee details as needed
-  salary       Salary[]
+  salary       Int
+
   attendance   Attendance[]
 }
 
@@ -30,11 +30,4 @@ model Attendance {
   employeeId Int
 }
 
-model Salary {
-  id         Int      @id @default(autoincrement())
-  amount     Float
-  date       DateTime
-  // Define the relationship with Employee
-  employee   Employee @relation(fields: [employeeId], references: [id])
-  employeeId Int
-}
+
