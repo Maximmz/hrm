@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Employees, columns } from "./_components/Columns";
 import { DataTable } from "./_components/DataTable";
 import db from "@/db/db";
+import Link from "next/link";
 
 
 async function getData(): Promise<Employees[]> {
@@ -29,7 +30,11 @@ export default async function Home() {
   
    </div>
    <div className="max-w-full flex justify-end pe-24 pt-4">
-   <Button className="">Add Employee</Button>
+   <Button asChild>
+          <Link href="/newemp">
+          Add Employees
+          </Link>
+          </Button>
   
    
    </div>
